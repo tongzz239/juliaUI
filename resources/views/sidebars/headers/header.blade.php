@@ -66,16 +66,16 @@
       <a class="navbar-brand" style="user-select: none">Plagiaadikontroll</a>
         <ul class="nav navbar-nav  mr-auto">
             <li class="nav-item {{ $headerActive == 1 ? 'active':'' }}">
-                <a class="nav-link" href="/dashboard/juliaUsage">Tahvel</span></a>
+                <a class="nav-link" href="/dashboard/juliaUsage">Dashboard</span></a>
             </li>
             <li class="nav-item {{ $headerActive == 2 ? 'active':'' }}">
-                <a class="nav-link">Kontrollid</span></a>
+                <a class="nav-link">Section</span></a>
             </li>
             <li class="nav-item {{ $headerActive == 3 ? 'active':'' }}">
-                <a class="nav-link" href="">Statistika</span></a>
+                <a class="nav-link" href="">Section</span></a>
             </li>
             <li class="nav-item {{ $headerActive == 4 ? 'active':'' }}">
-                <a class="nav-link" href="">Statistika</span></a>
+                <a class="nav-link" href="">Section</span></a>
             </li>
             @isset($admin)
             <li class="nav-item {{ $headerActive == 5 ? 'active':'' }}">

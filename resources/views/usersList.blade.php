@@ -2,16 +2,24 @@
 
 @section('body')
 <ul class="list-group">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" aria-label="Имя получателя" aria-describedby="basic-addon2">
-        </div>
-    </li>
     @foreach ($users as $user)
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            {{ $user->email }}
-            <button type="button" class="btn btn-secondary">Remove</button>
-        </li>
+            <li class="list-group-item justify-content-between align-items-center">
+                
+                <span class="d-flex">
+                <span class="p-2 mr-auto">{{ $user->email }}</span>
+                @if ($user->admin == 0)
+                    <a class="btn btn-primary p-2" href="/addAdmin/{{ $user->id }}" role="button">Give admin rights</a>
+                @elseif ($user->admin == 1)
+                    <a class="btn btn-primary p-2" href="/removeAdmin/{{ $user->id }}" role="button">Remove admin rights</a>
+                @endif
+                    <a class="btn btn-danger p-2" href="/removeUser/{{ $user->id }}" role="button">Remove user</a>
+                </span>
+            </li>
     @endforeach
 </ul>
 @endsection
+
+
+
+
+
